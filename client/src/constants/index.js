@@ -1,4 +1,6 @@
-export const CROWDFUNDING_CONTRACT_ADDRESS = "0xC3769C580B4BE4fD76E2Cf3dC5B33dF187941A41";
+// Your newly deployed Smart Contract Address from Sepolia
+export const CROWDFUNDING_CONTRACT_ADDRESS = "0x20D65531774cbd822B336d704259a36eDb01dF71";
+
 export const CROWDFUNDING_ABI = [
   {
     "inputs": [
@@ -124,11 +126,6 @@ export const CROWDFUNDING_ABI = [
   },
   {
     "inputs": [
-      {
-        "internalType": "address",
-        "name": "_owner",
-        "type": "address"
-      },
       {
         "internalType": "string",
         "name": "_title",
@@ -340,4 +337,4 @@ export const CROWDFUNDING_ABI = [
     "stateMutability": "view",
     "type": "function"
   }
-]
+];

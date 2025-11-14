@@ -15,7 +15,7 @@ const CampaignDetailModal = ({ campaign, onClose }) => {
 
     if (!campaign) return null;
 
-    const handleContentClick = (e) = e.stopPropagation();
+    const handleContentClick = (e) => e.stopPropagation();
 
     const handleDonate = async () => {
         const donationAmount = prompt("Enter amount to donate in ETH:", "0.01");
@@ -46,7 +46,8 @@ const CampaignDetailModal = ({ campaign, onClose }) => {
 
             await contract.methods.donateToCampaign(campaign.id).send({
                 from: userAddress,
-                value: amountInWei
+                value: amountInWei,
+                gas: 3000000
             });
 
             // 5. REPLACE ALERT

@@ -208,7 +208,7 @@ const ProfilePage = () => {
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
             const contract = new web3.eth.Contract(CROWDFUNDING_ABI, CROWDFUNDING_CONTRACT_ADDRESS);
 
-            await contract.methods.claim(campaignId).send({ from: accounts[0] });
+            await contract.methods.claim(campaignId).send({ from: accounts[0], gas: 3000000 });
             
             // 3. REPLACE ALERT
             showNotification("Funds claimed successfully! The page will now refresh.", "success");

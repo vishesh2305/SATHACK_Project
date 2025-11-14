@@ -272,13 +272,12 @@ const CreateCampaignPage = () => {
             const imageUrl = "https://placehold.co/600x400/94a3b8/ffffff?text=Daan+Campaign"; // Placeholder
 
             await contract.methods.createCampaign(
-                userAddress,
                 formData.title,
                 formData.description,
                 targetInWei,
                 deadlineInSeconds,
                 imageUrl
-            ).send({ from: userAddress });
+            ).send({ from: userAddress, gas: 3000000 });
 
             // 11. REPLACE setNotification with showNotification
             showNotification('Campaign created successfully! Redirecting...', 'success');
