@@ -8,6 +8,8 @@ import ProfilePage from './pages/ProfilePage';
 import AuthPage from './pages/AuthPage';
 import CreateCampaignPage from './pages/CreatecampaignPage';
 import SettingsPage from './pages/SettingsPage';
+import CampaignDetailPage from './pages/CampaignDetailPage'; // --- THIS WAS MISSING ---
+import OrganizerProfilePage from './pages/OrganizerProfilePage.jsx'; 
 import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -15,7 +17,7 @@ import { ThemeProvider } from './contexts/ThemeProvider';
 import { UserProvider } from './contexts/UserProvider';
 import ProtectedRoute from './components/ProtectedRoute'; 
 import BackgroundGraphic from './components/common/BackgroundGraphic';
-import NotificationDisplay from './components/common/NotificationDisplay'; // 1. IMPORT
+import NotificationDisplay from './components/common/NotificationDisplay';
 
 function App() {
   const location = useLocation();
@@ -28,7 +30,7 @@ function App() {
         <div className="text-gray-800 dark:text-gray-200 min-h-screen font-sans">
           
           <BackgroundGraphic /> 
-          <NotificationDisplay /> {/* 2. ADD THE DISPLAY COMPONENT HERE */}
+          <NotificationDisplay />
           
           {showLayout && <Header />}
           <Routes>
@@ -39,6 +41,11 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/create" element={<CreateCampaignPage />} />
               <Route path="/settings" element={<SettingsPage />} />
+              
+              {/* --- THIS IS THE FIX: ADDED THE ROUTE FOR CAMPAIGN DETAILS --- */}
+              <Route path="/campaign/:id" element={<CampaignDetailPage />} />
+              
+              <Route path="/organizer/:id" element={<OrganizerProfilePage />} /> 
             
            
             <Route path="*" element={<NotFoundPage />} />

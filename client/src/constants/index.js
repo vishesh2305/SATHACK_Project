@@ -1,5 +1,5 @@
 // Your newly deployed Smart Contract Address from Sepolia
-export const CROWDFUNDING_CONTRACT_ADDRESS = "0x20D65531774cbd822B336d704259a36eDb01dF71";
+export const CROWDFUNDING_CONTRACT_ADDRESS = "0xf6Af57bc16DDFfD5F2724704c039669B5664A215";
 
 export const CROWDFUNDING_ABI = [
   {
